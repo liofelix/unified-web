@@ -1,0 +1,27 @@
+packages:
+  - apps/*
+  - packages/*
+  - tools/*
+
+allowBuilds:
+  "@parcel/watcher": true
+
+catalogMode: prefer
+
+catalog:
+  "@types/node": ^24
+  typescript: ^7.0.2
+  vite: npm:@voidzero-dev/vite-plus-core@0.2.8
+  vite-plus: 0.2.8
+
+minimumReleaseAgeExclude:
+  - "@liofelix/unified-request@0.1.0"
+
+overrides:
+  "svg-baker@1.7.0>micromatch": 4.0.8
+  vite: "catalog:"
+peerDependencyRules:
+  allowAny:
+    - vite
+  allowedVersions:
+    vite: "*"
