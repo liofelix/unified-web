@@ -2,6 +2,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig, lazyPlugins, loadEnv } from 'vite-plus'
 import { AntdvNextResolver } from '@antdv-next/auto-import-resolver'
+import { fileViewerRenderers } from '@file-viewer/vite-plugin'
 import tailwindcss from '@tailwindcss/vite'
 import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -24,6 +25,7 @@ export default defineConfig({
     },
   },
   plugins: lazyPlugins(() => [
+    fileViewerRenderers({ copyAssets: true, chunkStrategy: 'renderer' }),
     vue(),
     tailwindcss(),
     AutoImport({
@@ -44,7 +46,9 @@ export default defineConfig({
       iconDirs: [fileURLToPath(new URL('./src/assets/icons', import.meta.url))],
       symbolId: 'icon-[dir]-[name]',
     }),
-    vueDevTools(),
+    vueDevTools({
+      launchEditor: 'idea',
+    }),
   ]),
   resolve: {
     alias: {

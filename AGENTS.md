@@ -1,5 +1,3 @@
-<!--VITE PLUS START-->
-
 # 使用 Vite+ 统一 Web 工具链
 
 本项目使用基于 Vite、Rolldown、Vitest、tsdown、Oxlint、Oxfmt 和 Vite Task 的 Vite+ 工具链。Vite+ 与 Vite 不同：开发和构建应优先使用 `vp dev` 与 `vp build`。使用具体命令前，可运行 `vp help` 或 `vp <command> --help` 查看说明。
@@ -71,5 +69,3 @@
 - 新增公共能力前先检查目标项目已有的组件、常量、工具、hooks、指令、stores、请求封装和共享包，避免重复实现。
 - 新增文件夹使用小写 kebab-case；组件文件名和其他命名遵循目标框架及项目级规则。
 - 修改完成后复查 `git diff`、`git status` 和必要的针对性检查；不要把验证通过误认为用户已经接受功能，也不要声称未执行的手工验证已经完成。
-
-<!--VITE PLUS END-->

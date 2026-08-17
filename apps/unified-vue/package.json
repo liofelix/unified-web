@@ -12,9 +12,11 @@
     "format": "vp fmt src/"
   },
   "dependencies": {
-    "@liofelix/unified-request": "^0.1.1",
+    "@file-viewer/preset-office": "catalog:",
+    "@file-viewer/vue3": "catalog:",
+    "@liofelix/unified-request": "catalog:",
     "@vueuse/core": "^14.3.0",
-    "antdv-next": "^1.4.5",
+    "antdv-next": "^1.5.1",
     "axios": "^1.19.0",
     "dayjs": "^1.11.21",
     "echarts": "^6.1.0",
@@ -25,8 +27,9 @@
     "vue-router": "^5.2.0"
   },
   "devDependencies": {
-    "@antdv-next/auto-import-resolver": "^1.1.0",
+    "@antdv-next/auto-import-resolver": "^1.1.1",
     "@antdv-next/tailwind": "^1.1.1",
+    "@file-viewer/vite-plugin": "catalog:",
     "@tailwindcss/vite": "^4.3.3",
     "@tsconfig/node24": "^24.0.4",
     "@types/node": "^26.1.1",

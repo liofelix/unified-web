@@ -9,13 +9,14 @@ allowBuilds:
 catalogMode: prefer
 
 catalog:
+  "@file-viewer/preset-office": ^2.2.5
+  "@file-viewer/vite-plugin": ^2.2.5
+  "@file-viewer/vue3": ^2.2.5
+  "@liofelix/unified-request": ^0.1.1
   "@types/node": ^24
   typescript: ^7.0.2
   vite: npm:@voidzero-dev/vite-plus-core@0.2.8
   vite-plus: 0.2.8
-
-minimumReleaseAgeExclude:
-  - "@liofelix/unified-request@0.1.0"
 
 overrides:
   "svg-baker@1.7.0>micromatch": 4.0.8

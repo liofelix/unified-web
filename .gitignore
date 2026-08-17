@@ -31,6 +31,12 @@ coverage
 /cypress/screenshots/
 __screenshots__/
 *.timestamp-*-*.mjs
+
+# File Viewer generated assets
+/apps/unified-vue/dummy-non-existing-folder/
+/apps/unified-vue/public/vendor/
+/apps/unified-vue/public/flyfish-viewer-assets.json
+
 .idea
 .DS_Store
 *.suo
@@ -42,5 +48,3 @@ __screenshots__/
 # AI agent worktrees
 .claude/worktrees/
 !.vscode/
-!.vscode/settings.json
-!.vscode/extensions.json
