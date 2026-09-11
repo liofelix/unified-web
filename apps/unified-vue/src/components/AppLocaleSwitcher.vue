@@ -40,7 +40,7 @@ function handleLocaleMenuClick({ key }: { key: string }) {
     >
       <a-button type="text">
         <template #icon>
-          <AppSvgIcon name="locale" size="16" />
+          <AppSvgIcon name="lucide:languages" size="16" />
         </template>
       </a-button>
     </a-dropdown>

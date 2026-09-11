@@ -14,9 +14,11 @@
   "dependencies": {
     "@file-viewer/preset-office": "catalog:",
     "@file-viewer/vue3": "catalog:",
+    "@iconify-json/lucide": "^1.2.130",
+    "@iconify/vue": "^5.0.1",
     "@liofelix/unified-request": "catalog:",
     "@vueuse/core": "^14.3.0",
-    "antdv-next": "^1.5.1",
+    "antdv-next": "^1.5.3",
     "axios": "^1.19.0",
     "dayjs": "^1.11.21",
     "echarts": "^6.1.0",

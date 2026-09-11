@@ -21,7 +21,6 @@
 - 静态资源放在 `src/assets`，按 `icons`、`images`、`styles`、`fonts` 分类；全局样式放在 `src/assets/styles`。
 - 模块私有类型就近放在 `types.ts`；跨模块复用类型放在 `src/types`。
 - API 请求模块统一放在 `src/api`；API 接口函数使用具名 `export function` 导出，不使用 `export const xxx = () => {}`。
-- 新增公共能力前先检查现有 `components`、`constants`、`utils`、`hooks`、`directives`、`stores` 和请求封装，避免重复实现。
 - 文件夹使用小写 kebab-case；组件文件使用多单词 PascalCase。
 
 ## Vue 组件与组合式函数
@@ -31,7 +30,6 @@
 - 项目自定义组合式函数统一使用 `useAppXxx` 命名；文件名必须与主导出函数一致，例如 `useAppConfig.ts`、`useAppTable.ts`、`useAppECharts.ts`。
 - 与组合式函数名称直接对应的 Options 类型同步使用 `UseAppXxxOptions` 命名，例如 `UseAppEChartsOptions`。
 - Pinia store 按业务模块拆分；组件中优先通过 store 暴露的状态和行为访问全局状态，不重复维护同一份全局数据。
-- 路由页面和页面私有组件遵循 `src/pages/<module>` 目录约定，跨页面复用的组件才放入 `src/components`。
 
 ## 应用配置与国际化
 
@@ -43,9 +41,16 @@
 ## Antdv Next 使用
 
 - 使用组件前先查 Antdv Next 文档和当前版本类型定义。
-- 组件、类型和静态方法优先从 `antdv-next` 根包导入。
-- 模板组件使用小写 kebab-case，例如 `<a-button>`。
 - 组件库默认行为不能满足需求时，先确认是否已有项目封装或全局配置，再添加局部覆盖。
+
+## 图标使用
+
+- 图标统一通过 `<app-svg-icon name="..." />` 渲染，不在业务组件里直接写 `<svg>` 或引入图标组件。
+- `name` 不含冒号时为本地图标，对应 `src/assets/icons/<name>.svg`，由 `vite-plugin-svg-icons` 编译成 sprite。
+- `name` 形如 `<prefix>:<icon>` 时为 Iconify 图标，例如 `lucide:house`，由 `@iconify/vue` 渲染。
+- Iconify 图标数据来自本地打包的 `@iconify-json/<prefix>`；加载器登记在 `src/utils/iconify.ts` 的 `collectionLoaders`，集合 JSON 按前缀异步加载并复用 Promise，不进首屏产物。通过 `setCustomIconsLoader` 返回完整集合，由 Iconify 处理默认尺寸和别名。
+- 新增图标集合：安装 `@iconify-json/<prefix>` 并在 `collectionLoaders` 中登记；组件只将已登记的 `prefix:icon` 名称交给 Iconify，未登记前缀或格式不完整的名称渲染为保留尺寸的空 SVG，不回退到 Iconify 公共 API。
+- `registerIconifyCollections()` 在 `src/main.ts` 中调用一次；新增应用入口或独立渲染环境时需同步调用。
 
 ## Vue SFC 样式
 

@@ -6,9 +6,12 @@ import { useAppConfig } from './hooks/useAppConfig'
 import i18n from './locales'
 import router from './router'
 import pinia from './stores'
+import { registerIconifyCollections } from './utils/iconify'
 import 'virtual:svg-icons-register'
 import '@/assets/styles/index.css'
 import '@/assets/styles/base.scss'
+
+registerIconifyCollections()
 
 const { appTitle } = useAppConfig()
 document.title = appTitle
