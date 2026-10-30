@@ -20,5 +20,11 @@ export default defineConfig({
   },
   run: {
     cache: true,
+    tasks: {
+      commit: {
+        command: "git-cz",
+        cache: false,
+      },
+    },
   },
 });

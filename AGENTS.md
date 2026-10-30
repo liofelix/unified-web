@@ -26,6 +26,11 @@
 - 修改前检查工作区，保留用户已有的 staged、unstaged 和未跟踪改动；不要覆盖、还原或清理无关文件。
 - 不执行超出用户授权范围的删除、重命名、依赖升级、提交、推送或外部系统操作。
 
+## 提交信息
+
+- 生成提交信息前检查拟提交的变更；获得提交授权后，可使用 `vp run commit` 通过中文交互向导填写信息并创建提交。向导不自动分析代码，生成信息本身不代表授权提交或推送。
+- 沿用 Vite+ 钩子：`pre-commit` 检查暂存文件，`commit-msg` 通过 commitlint 校验提交信息。规则继承 `@commitlint/config-conventional`，scope 使用 kebab-case，描述不限制大小写；校验失败时修正信息。
+
 ## 文档、浏览器能力与兼容性
 
 - 使用或新增 CSS 属性、HTML 属性、JavaScript 语法、Web API、DOM/Event API 等浏览器相关能力前，必须优先调用已配置的 MDN MCP 获取依据：先使用 `mcp__mdn__search` 搜索特性名称，再使用返回的 `path` 调用 `mcp__mdn__get_doc` 获取语法、参数、取值和限制；需要确认浏览器支持情况时，使用返回的 `compat-key` 调用 `mcp__mdn__get_compat`。不得凭记忆、生成内容或自行猜测 `compat-key`。

@@ -9,20 +9,54 @@ allowBuilds:
 catalogMode: prefer
 
 catalog:
-  "@file-viewer/preset-office": ^2.2.5
-  "@file-viewer/vite-plugin": ^2.2.5
-  "@file-viewer/vue3": ^2.2.5
+  "@antdv-next/auto-import-resolver": ^1.2.0
+  "@antdv-next/tailwind": ^1.1.2
+  "@commitlint/cli": ^21.2.4
+  "@commitlint/config-conventional": ^21.2.4
+  "@iconify-json/lucide": ^1.2.147
+  "@iconify/vue": ^5.0.4
   "@liofelix/unified-request": ^0.1.1
-  "@types/node": ^24
+  "@tailwindcss/vite": ^4.3.3
+  "@tsconfig/node24": ^24.0.5
+  "@types/node": ^26.6.5
+  "@vitejs/plugin-vue": ^6.0.10
+  "@vue/devtools-api": ^8.2.1
+  "@vue/tsconfig": ^0.9.1
+  "@vueuse/core": ^15.0.0
+  "@x18n/cli": ^0.1.0
+  antdv-next: ^1.7.1
+  axios: ^1.21.0
+  bumpp: ^12.3.0
+  commitizen: ^4.3.2
+  cz-git: ^1.14.0
+  dayjs: ^1.11.23
+  echarts: ^6.1.0
+  fast-glob: ^3.3.3
+  npm-run-all2: ^9.0.4
+  pinia: ^4.1.0
+  pinia-plugin-persistedstate: ^4.7.1
+  sass: ^1.106.1
+  tailwindcss: ^4.3.3
   typescript: ^7.0.2
-  vite: npm:@voidzero-dev/vite-plus-core@0.3.1
-  vite-plus: 0.3.1
+  unplugin-auto-import: ^21.1.0
+  unplugin-icons: ^24.0.0
+  unplugin-vue-components: ^32.1.0
+  vite: npm:@voidzero-dev/vite-plus-core@1.4.0
+  vite-plugin-svg-icons: ^2.0.1
+  vite-plugin-vue-devtools: ^8.2.1
+  vite-plus: 1.4.0
+  vue: ^3.5.44
+  vue-i18n: ^11.4.16
+  vue-router: ^5.4.0
 
 overrides:
   "svg-baker@1.7.0>micromatch": 4.0.8
   vite@*: "catalog:"
+  vitest@*: 5.0.3
 peerDependencyRules:
   allowAny:
     - vite
   allowedVersions:
     vite: "*"
+minimumReleaseAgeExclude:
+  - "@iconify-json/lucide@1.2.144"

@@ -9,17 +9,27 @@
     "prepare": "vp config --no-agent"
   },
   "devDependencies": {
+    "@commitlint/cli": "catalog:",
+    "@commitlint/config-conventional": "catalog:",
+    "@x18n/cli": "catalog:",
+    "commitizen": "catalog:",
+    "cz-git": "catalog:",
     "vite": "catalog:",
     "vite-plus": "catalog:"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
   },
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "12.3.4",
+      "version": "12.11.2",
       "onFail": "download"
     }
   },
   "engines": {
-    "node": ">=22.18.0"
+    "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
   }
 }
